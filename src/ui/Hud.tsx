@@ -1,9 +1,9 @@
 /**
  * Hud — the DOM overlay drawn on top of the 3D stage.
  *
- * Corner registration marks + top/bottom chevron ticks + scattered perimeter
- * letters + the top nav + interactive side arrows + the bottom flavour name,
- * gradient scrubber and label.
+ * Corner registration marks + top/bottom chevron ticks + the top nav +
+ * interactive side arrows + the bottom flavour name, gradient scrubber and
+ * label.
  */
 
 import { ChevronUp } from 'lucide-react';
@@ -11,7 +11,6 @@ import { TopNav } from './TopNav';
 import { SideArrows } from './SideArrows';
 import { Scrubber } from './Scrubber';
 import { FlavorName } from './FlavorName';
-import { ScatterLetters } from './ScatterLetters';
 import { FocusPanel } from './FocusPanel';
 import { Menu } from './Menu';
 import { useStore } from '../store';
@@ -34,9 +33,6 @@ export function Hud() {
         mode !== 'loading' ? 'revealed' : ''
       }`}
     >
-      {/* Faint scattered flavour letters (behind everything else in the HUD) */}
-      <ScatterLetters />
-
       {/* Top navigation */}
       <TopNav />
 

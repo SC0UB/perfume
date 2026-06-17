@@ -82,8 +82,9 @@ export const config = {
   // ── Ring layout ────────────────────────────────────────────────────────────
   ring: {
     radius: 7.2, // radius of the wide arc the cans sit on
-    // Angular gap between adjacent cans, in radians. Small => shallow arc.
-    angleStep: 0.46,
+    // Angular gap between adjacent cans, in radians. Small => cans sit closer
+    // together (tighter lateral spacing) and the arc is shallower.
+    angleStep: 0.24,
     // Vertical baseline of the cans.
     baseY: 0,
     // How far back (z, in world units) the centre sits relative to ring origin
@@ -167,13 +168,6 @@ export const config = {
     chevron: {
       size: 8,
       opacity: 0.3,
-    },
-    // Large faint perimeter letters spelling the active flavour.
-    scatterLetters: {
-      opacity: 0.05,
-      minSize: 60, // px
-      maxSize: 150, // px
-      crossfadeMs: 600,
     },
     flavorName: {
       crossfadeMs: 500,

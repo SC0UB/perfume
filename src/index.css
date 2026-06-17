@@ -409,52 +409,6 @@ body {
   pointer-events: none;
 }
 
-/* ── Scattered perimeter letters ──────────────────────────────────────────── */
-.scatter-letters {
-  position: fixed;
-  inset: 0;
-  z-index: 10;
-  pointer-events: none;
-  overflow: hidden;
-}
-.scatter-layer {
-  position: absolute;
-  inset: 0;
-}
-.scatter-layer.entering {
-  animation: scatterIn 0.6s ease forwards;
-}
-.scatter-layer.leaving {
-  animation: scatterOut 0.6s ease forwards;
-}
-@keyframes scatterIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@keyframes scatterOut {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-.scatter-glyph {
-  position: absolute;
-  font-family: var(--font-display);
-  font-weight: 700;
-  color: #fff;
-  opacity: 0.05;
-  text-transform: uppercase;
-  line-height: 1;
-  user-select: none;
-  white-space: nowrap;
-}
-
 /* ── Focus mode ───────────────────────────────────────────────────────────── */
 /* Bottom carousel UI recedes in focus. */
 .bottom-bar,
@@ -800,8 +754,6 @@ body {
     transition: none;
   }
   .flavor-name-text,
-  .scatter-layer.entering,
-  .scatter-layer.leaving,
   .focus-title,
   .focus-desc {
     animation-duration: 0.001s;
