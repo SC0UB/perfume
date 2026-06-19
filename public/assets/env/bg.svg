@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <!-- PLACEHOLDER sky. Swap for your own art (see README). Cobalt/white Sidi Bou Said comes later. -->
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#cfe7f5"/>
+      <stop offset="0.45" stop-color="#a9d2ec"/>
+      <stop offset="1" stop-color="#dcead5"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="0.72" cy="0.26" r="0.5">
+      <stop offset="0" stop-color="#fff7e0" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#fff7e0" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <rect width="1600" height="900" fill="url(#sun)"/>
+  <g fill="#ffffff" opacity="0.6">
+    <ellipse cx="380" cy="230" rx="150" ry="46"/>
+    <ellipse cx="520" cy="250" rx="120" ry="40"/>
+    <ellipse cx="1180" cy="180" rx="170" ry="50"/>
+    <ellipse cx="1320" cy="205" rx="120" ry="38"/>
+  </g>
+</svg>

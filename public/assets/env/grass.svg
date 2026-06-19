@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 460" preserveAspectRatio="xMidYMax slice">
+  <!-- PLACEHOLDER grass foreground (transparent above). Swap for your own grass.png (see README).
+       Bottles plant into this band, so keep the opaque mass along the bottom. -->
+  <defs>
+    <linearGradient id="turf" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5fae5a"/>
+      <stop offset="1" stop-color="#2f7a3a"/>
+    </linearGradient>
+  </defs>
+  <rect y="150" width="1600" height="310" fill="url(#turf)"/>
+  <g stroke-linecap="round" fill="none">
+    <g stroke="#5aa653" stroke-width="9">
+      <path d="M30 170 q6 -70 -8 -120"/><path d="M130 170 q-6 -64 10 -116"/>
+      <path d="M250 168 q8 -76 -6 -128"/><path d="M380 172 q-8 -60 6 -110"/>
+      <path d="M520 168 q6 -80 -10 -132"/><path d="M660 170 q-6 -66 8 -118"/>
+      <path d="M800 168 q8 -82 -8 -134"/><path d="M940 170 q-8 -62 8 -112"/>
+      <path d="M1080 168 q6 -78 -8 -128"/><path d="M1220 172 q-6 -64 10 -114"/>
+      <path d="M1360 168 q8 -80 -8 -130"/><path d="M1500 170 q-8 -62 8 -112"/>
+      <path d="M1570 172 q6 -68 -6 -116"/>
+    </g>
+    <g stroke="#7cc46f" stroke-width="7" opacity="0.85">
+      <path d="M80 172 q-4 -56 12 -100"/><path d="M200 170 q6 -62 -8 -108"/>
+      <path d="M320 172 q-6 -52 8 -96"/><path d="M450 170 q6 -66 -10 -112"/>
+      <path d="M590 172 q-4 -58 10 -104"/><path d="M730 170 q6 -70 -8 -116"/>
+      <path d="M870 172 q-6 -56 8 -100"/><path d="M1010 170 q6 -64 -8 -110"/>
+      <path d="M1150 172 q-6 -54 10 -98"/><path d="M1290 170 q6 -68 -8 -112"/>
+      <path d="M1430 172 q-6 -58 8 -102"/>
+    </g>
+  </g>
+</svg>

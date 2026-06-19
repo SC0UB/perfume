@@ -1,0 +1,58 @@
+/* ============================================================================
+   tokens.css — ALL themeable values live here (plus the per-flavour colours in
+   src/data/flavors.ts, which the theming layer mirrors into the --flavor-* vars
+   at runtime). Reskinning to the Sidi Bou Said cobalt/white world = edit this
+   file + drop two images into /public/assets/env. Nothing else.
+   ========================================================================== */
+
+:root {
+  /* ── ENVIRONMENT ART ──────────────────────────────────────────────────────
+     Swap the world here. Either overwrite the two placeholder files in
+     /public/assets/env, or repoint these two vars at your own filenames.       */
+  --env-bg: url('/assets/env/bg.svg');
+  --env-grass: url('/assets/env/grass.svg');
+  /* How tall the grass band stands and how far bottle bases sink into it. */
+  --env-grass-height: 34vh;
+  --env-bottle-sink: 4.5vh;
+
+  /* ── LOADER ──────────────────────────────────────────────────────────────
+     Animated aurora/mesh gradient (green→blue→purple drift by default).
+     Recolour to cobalt + white for the rebrand.                                */
+  --loader-backdrop: #0a0b0d;
+  --loader-card-radius: 30px;
+  --loader-stop-1: #2f9c70;
+  --loader-stop-2: #2e74b8;
+  --loader-stop-3: #6b40b6;
+  --loader-stop-4: #2aa6a0;
+  --loader-fg: #ffffff;
+
+  /* ── CHROME (header, action bar, social + icon buttons over the imagery) ─── */
+  --chrome-fg: #ffffff;
+  --chrome-fg-dim: rgba(255, 255, 255, 0.72);
+  --chrome-scrim: rgba(14, 22, 32, 0.30); /* sits behind text/icons for contrast */
+  --chrome-pill-border: rgba(255, 255, 255, 0.55);
+  --chrome-pill-bg: rgba(255, 255, 255, 0.10);
+  --chrome-pill-bg-hover: rgba(255, 255, 255, 0.20);
+  --chrome-ring: rgba(255, 255, 255, 0.45); /* circular icon-button outline */
+  --focus-ring: #ffffff;
+
+  /* ── ACTIVE FLAVOUR THEME ────────────────────────────────────────────────
+     Seeded here, overwritten at runtime from flavors.ts as the flavour changes
+     (eased). Per-flavour colours themselves live in src/data/flavors.ts.       */
+  --flavor-bg: #6fb4e0;
+  --flavor-accent: #f4c20d;
+  --flavor-text: #0e2a3a;
+
+  /* ── TYPE ────────────────────────────────────────────────────────────────
+     Display/kinetic/labels = heavy geometric grotesque; body = clean sans.
+     The live site uses Blauer Nue / Salmond (commercial); these are free
+     near-matches, swap at the rebrand.                                         */
+  --font-display: 'Space Grotesk', 'Archivo', system-ui, sans-serif;
+  --font-body: 'Hanken Grotesk Variable', 'Hanken Grotesk', system-ui, sans-serif;
+
+  /* ── MOTION ──────────────────────────────────────────────────────────────── */
+  --ease-ui: cubic-bezier(0.22, 0.61, 0.36, 1); /* ~power2.out */
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1); /* big transitions */
+
+  color-scheme: light;
+}
