@@ -21,6 +21,11 @@ const isMobile =
   window.matchMedia('(max-width: 768px)').matches;
 
 export function ThreeStage() {
+  // When a backdrop scene is active, render the canvas transparent so the DOM
+  // backdrop shows through behind the bottles.
+  const transparent =
+    config.bg.transparent && config.backdrop.kind !== 'studio';
+
   return (
     <Canvas
       className="stage-canvas"
@@ -31,10 +36,14 @@ export function ThreeStage() {
         far: config.camera.far,
         position: config.camera.gallery.position,
       }}
-      gl={{ antialias: true, alpha: false, powerPreference: 'high-performance' }}
+      gl={{
+        antialias: true,
+        alpha: transparent,
+        powerPreference: 'high-performance',
+      }}
       shadows={!isMobile}
     >
-      <color attach="background" args={[config.bg.color]} />
+      {!transparent && <color attach="background" args={[config.bg.color]} />}
       <Suspense fallback={null}>
         <CanStage />
       </Suspense>
