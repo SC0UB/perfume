@@ -10,6 +10,7 @@
  */
 
 import { Stage } from './stage';
+import { Backdrop } from './ui/Backdrop';
 import { Hud } from './ui/Hud';
 import { Loader } from './ui/Loader';
 import { useThemeLerp, ThemeCssVar } from './ui/themeColor';
@@ -29,6 +30,8 @@ export default function App() {
 
   return (
     <>
+      {/* Mediterranean (Sidi Bou Saïd) scene behind the transparent canvas */}
+      <Backdrop />
       <Stage />
 
       {/* DOM overlays */}

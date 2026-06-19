@@ -23,11 +23,25 @@ import type { Vector3Tuple } from 'three';
 export const config = {
   // ── Background & vignette ────────────────────────────────────────────────
   bg: {
-    color: '#050505', // near-pure black
+    color: '#050505', // near-pure black (used only when backdrop is off)
+    // When a backdrop scene is active the WebGL canvas renders transparent so
+    // the DOM backdrop shows through behind the bottles.
+    transparent: true,
     // Radial vignette is a DOM overlay; these drive its CSS.
     vignetteStrength: 0.85, // 0..1 opacity of the darkened edges
     vignetteInner: 38, // % radius where darkening starts
     vignetteOuter: 100, // % radius where darkening reaches full
+  },
+
+  // ── Backdrop scene (the Sidi Bou Saïd / Mediterranean decor) ───────────────
+  // The original VOLTÉ studio was a black void. This swaps in a bright
+  // daytime Tunisian scene behind the bottles (à la Ciao Kombucha's grass
+  // hero). Set `kind: 'studio'` to fall back to the dark void.
+  backdrop: {
+    kind: 'sidi-bou-said' as 'sidi-bou-said' | 'studio',
+    blurPx: 4, // depth-of-field blur (mirrors Ciao's out-of-focus bg)
+    brightness: 1.04,
+    saturate: 1.08,
   },
 
   // ── Typography ─────────────────────────────────────────────────────────────
@@ -102,7 +116,7 @@ export const config = {
 
   // ── Lighting (the "only the middle is lit" system) ─────────────────────────
   lighting: {
-    ambient: 0.06, // very low base fill
+    ambient: 0.55, // bright daytime fill (was 0.06 for the dark studio)
     spot: {
       color: '#ffffff',
       intensity: 90,
@@ -129,8 +143,10 @@ export const config = {
     // index distance 0 => full; the curve drives envMapIntensity + a tint mult.
     falloff: {
       // brightness = max(min, base * pow(perStep, distance))
-      perStep: 0.32,
-      min: 0.02,
+      // Daytime scene: neighbours stay clearly visible (Ciao lights the whole
+      // row). Centre still pops via the spotlight + theme glow.
+      perStep: 0.82,
+      min: 0.5,
     },
   },
 
